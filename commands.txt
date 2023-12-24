@@ -1,0 +1,12 @@
+    1  #!/bin/bash -li
+    2  cd /ide/xterm || exit
+    3  exec /ide/xterm/bin/node /ide/xterm/index.cjs "$@"
+    4  docker run -d --name nginx-container nginx
+    5  docker run -d --name gitea-container gitea/gitea:latest
+    6  docker ps
+    7  touch Dockerfile
+    8  vim Dockerfile
+    9  touch docker-compose.yml
+   10  vim docker-compose.yml
+   11  touch commands.txt
+   12  history >  commands.txt
